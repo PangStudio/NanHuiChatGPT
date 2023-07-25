@@ -1,11 +1,11 @@
 ---
-title: ChuanhuChatGPT
+title: NanHui ChatGPT
 emoji: 🐯
 colorFrom: green
 colorTo: red
 sdk: gradio
 sdk_version: 3.33.1
-app_file: ChuanhuChatbot.py
+app_file: mainApp.py
 pinned: false
 license: gpl-3.0
 ---
