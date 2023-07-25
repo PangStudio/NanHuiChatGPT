@@ -5,8 +5,13 @@
 
 <h1 align="center">南慧 Chat </h1>
 <div align="center">
+<<<<<<< HEAD
   <a href="https://github.com/GaiZhenBiao/NanhuiChatGPT">
     <img src="https://github.com/GaiZhenbiao/NanhuiChatGPT/assets/70903329/aca3a7ec-4f1d-4667-890c-a6f47bf08f63" alt="Logo" height="156">
+=======
+  <a href="https://github.com/GaiZhenBiao/ChuanhuChatGPT">
+    <img src="https://github.com/GaiZhenbiao/ChuanhuChatGPT/assets/70903329/aca3a7ec-4f1d-4667-890c-a6f47bf08f63" alt="Logo" height="156">
+>>>>>>> c1078f7aa980d456d95aad8a72fb810e6b57b978
   </a>
 
 <p align="center">

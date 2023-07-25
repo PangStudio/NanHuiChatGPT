@@ -5,8 +5,13 @@
 
 <h1 align="center">南慧 Chat </h1>
 <div align="center">
+<<<<<<< HEAD
   <a href="https://github.com/GaiZhenBiao/NanhuiChatGPT">
     <img src="https://github.com/GaiZhenbiao/NanhuiChatGPT/assets/70903329/aca3a7ec-4f1d-4667-890c-a6f47bf08f63" alt="Logo" height="156">
+=======
+  <a href="https://github.com/GaiZhenBiao/ChuanhuChatGPT">
+    <img src="https://github.com/GaiZhenbiao/ChuanhuChatGPT/assets/70903329/aca3a7ec-4f1d-4667-890c-a6f47bf08f63" alt="Logo" height="156">
+>>>>>>> c1078f7aa980d456d95aad8a72fb810e6b57b978
   </a>
 
 <p align="center">
@@ -42,7 +47,11 @@
 
 ## 目录
 
+<<<<<<< HEAD
 | [支持模型](#支持模型) | [使用技巧](#使用技巧) | [安装方式](https://github.com/GaiZhenbiao/NanhuiChatGPT/wiki/使用教程) | [常见问题](https://github.com/GaiZhenbiao/NanhuiChatGPT/wiki/常见问题) | [给作者买可乐🥤](#捐款) |
+=======
+| [支持模型](#支持模型) | [使用技巧](#使用技巧) | [安装方式](https://github.com/GaiZhenbiao/ChuanhuChatGPT/wiki/使用教程) | [常见问题](https://github.com/GaiZhenbiao/ChuanhuChatGPT/wiki/常见问题) | [给作者买可乐🥤](#捐款) |
+>>>>>>> c1078f7aa980d456d95aad8a72fb810e6b57b978
 | ------------------ | ------------------ | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------- |
 
 ## 支持模型
@@ -136,6 +145,10 @@ python NanhuiChatbot.py
 
 联系作者：请去[我的bilibili账号](https://space.bilibili.com/29125536)私信我。
 
+<<<<<<< HEAD
 <a href="https://www.buymeacoffee.com/NanhuiChat" ><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=NanhuiChat&button_colour=219d53&font_colour=ffffff&font_family=Poppins&outline_colour=ffffff&coffee_colour=FFDD00" alt="Buy Me A Coffee" width="250"></a>
+=======
+<a href="https://www.buymeacoffee.com/ChuanhuChat" ><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=ChuanhuChat&button_colour=219d53&font_colour=ffffff&font_family=Poppins&outline_colour=ffffff&coffee_colour=FFDD00" alt="Buy Me A Coffee" width="250"></a>
+>>>>>>> c1078f7aa980d456d95aad8a72fb810e6b57b978
 
 <img width="250" alt="image" src="https://user-images.githubusercontent.com/51039745/226920291-e8ec0b0a-400f-4c20-ac13-dafac0c3aeeb.JPG">
