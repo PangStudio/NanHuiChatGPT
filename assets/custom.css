@@ -68,7 +68,7 @@ footer {
     z-index: var(--layer-top);
     transition: top 0.3s ease-out;
 }
-#check-chuanhu-update {
+#check-Nanhui-update {
     position: absolute;
     align-items: center;
     display: flex;
@@ -155,7 +155,7 @@ footer {
 #status_display {
     transition: all 0.6s;
 }
-#chuanhu_chatbot {
+#Nanhui_chatbot {
     transition: height 0.3s ease;
 }
 
@@ -322,10 +322,7 @@ input:checked + .apSlider::before {
     left: 18px;
 }
 
-/* Override Slider Styles (for webkit browsers like Safari and Chrome)
- * 好希望这份提案能早日实现 https://github.com/w3c/csswg-drafts/issues/4410
- * 进度滑块在各个平台还是太不统一了
- */
+ 
 input[type="range"] {
     -webkit-appearance: none;
     height: 4px;
@@ -412,7 +409,7 @@ ol:not(.options), ul:not(.options) {
 }
 
 /* 亮色（默认） */
-#chuanhu_chatbot {
+#Nanhui_chatbot {
     background-color: var(--chatbot-background-color-light) !important;
     color: var(--chatbot-color-light) !important;
 }
@@ -423,7 +420,7 @@ ol:not(.options), ul:not(.options) {
     background-color: var(--message-user-background-color-light) !important;
 }
 /* 暗色 */
-.dark #chuanhu_chatbot {
+.dark #Nanhui_chatbot {
     background-color: var(--chatbot-background-color-dark) !important;
     color: var(--chatbot-color-dark) !important;
 }
@@ -434,22 +431,21 @@ ol:not(.options), ul:not(.options) {
     background-color: var(--message-user-background-color-dark) !important;
 }
 
-/* 屏幕宽度大于等于500px的设备 */
-/* update on 2023.4.8: 高度的细致调整已写入JavaScript */
+/* 屏幕宽度大于等于500px的设备 */ 
 @media screen and (min-width: 500px) {
-    #chuanhu_chatbot {
+    #Nanhui_chatbot {
         height: calc(100vh - 200px);
     }
-    #chuanhu_chatbot>.wrapper>.wrap {
+    #Nanhui_chatbot>.wrapper>.wrap {
         max-height: calc(100vh - 200px - var(--line-sm)*1rem - 2*var(--block-label-margin) );
     }
 }
 /* 屏幕宽度小于500px的设备 */
 @media screen and (max-width: 499px) {
-    #chuanhu_chatbot {
+    #Nanhui_chatbot {
         height: calc(100vh - 140px);
     }
-    #chuanhu_chatbot>.wrapper>.wrap {
+    #Nanhui_chatbot>.wrapper>.wrap {
         max-height: calc(100vh - 140px - var(--line-sm)*1rem - 2*var(--block-label-margin) );
     }
     [data-testid = "bot"] {
@@ -459,7 +455,7 @@ ol:not(.options), ul:not(.options) {
         letter-spacing: -1px; font-size: 22px;
     }
 }
-#chuanhu_chatbot>.wrapper>.wrap {
+#Nanhui_chatbot>.wrapper>.wrap {
     overflow-x: hidden;
 }
 /* 对话气泡 */
@@ -515,7 +511,7 @@ ol:not(.options), ul:not(.options) {
 }
 
 /* custom buttons */
-.chuanhu-btn {
+.Nanhui-btn {
     border-radius: 5px;
     /* background-color: #E6E6E6 !important; */
     color: rgba(120, 120, 120, 0.64) !important;
@@ -525,14 +521,14 @@ ol:not(.options), ul:not(.options) {
     cursor: pointer !important;
     transition: color .2s ease, background-color .2s ease;
 }
-.chuanhu-btn:hover {
+.Nanhui-btn:hover {
     background-color: rgba(167, 167, 167, 0.25) !important;
     color: unset !important;
 }
-.chuanhu-btn:active {
+.Nanhui-btn:active {
     background-color: rgba(167, 167, 167, 0.5) !important;
 }
-.chuanhu-btn:focus {
+.Nanhui-btn:focus {
     outline: none;
 }
 .copy-bot-btn {

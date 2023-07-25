@@ -604,9 +604,9 @@ def get_model(
             if os.environ.get("MINIMAX_API_KEY") != "":
                 access_key = os.environ.get("MINIMAX_API_KEY")
             model = MiniMax_Client(model_name, api_key=access_key, user_name=user_name, system_prompt=system_prompt)
-        elif model_type == ModelType.ChuanhuAgent:
-            from .ChuanhuAgent import ChuanhuAgent_Client
-            model = ChuanhuAgent_Client(model_name, access_key, user_name=user_name)
+        elif model_type == ModelType.NanhuiAgent:
+            from .NanhuiAgent import NanhuiAgent_Client
+            model = NanhuiAgent_Client(model_name, access_key, user_name=user_name)
         elif model_type == ModelType.Unknown:
             raise ValueError(f"未知模型: {model_name}")
         logging.info(msg)

@@ -76,7 +76,7 @@ def get_action_description(text):
     else:
         return ""
 
-class ChuanhuCallbackHandler(BaseCallbackHandler):
+class NanhuiCallbackHandler(BaseCallbackHandler):
 
     def __init__(self, callback) -> None:
         """Initialize callback handler."""
@@ -128,7 +128,7 @@ class ModelType(Enum):
     MOSS = 5
     YuanAI = 6
     Minimax = 7
-    ChuanhuAgent = 8
+    NanhuiAgent = 8
 
     @classmethod
     def get_type(cls, model_name: str):
@@ -150,8 +150,8 @@ class ModelType(Enum):
             model_type = ModelType.YuanAI
         elif "minimax" in model_name_lower:
             model_type = ModelType.Minimax
-        elif "川虎助理" in model_name_lower:
-            model_type = ModelType.ChuanhuAgent
+        elif "南慧助理" in model_name_lower:
+            model_type = ModelType.NanhuiAgent
         else:
             model_type = ModelType.Unknown
         return model_type

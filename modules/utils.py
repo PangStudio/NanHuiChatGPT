@@ -548,7 +548,7 @@ def commit_html():
         commit_hash = "<none>"
     if commit_hash != "<none>":
         short_commit = commit_hash[0:7]
-        commit_info = f'<a style="text-decoration:none;color:inherit" href="https://github.com/GaiZhenbiao/ChuanhuChatGPT/commit/{short_commit}">{short_commit}</a>'
+        commit_info = f'<a style="text-decoration:none;color:inherit" href="https://github.com/GaiZhenbiao/NanhuiChatGPT/commit/{short_commit}">{short_commit}</a>'
     else:
         commit_info = "unknown \U0001F615"
     return commit_info
@@ -560,7 +560,7 @@ def tag_html():
     except Exception:
         tag = "<none>"
     if tag != "<none>":
-        tag_info = f'<a style="text-decoration:none;color:inherit" href="https://github.com/GaiZhenbiao/ChuanhuChatGPT/releases/tag/{tag}">{tag}</a>'
+        tag_info = f'<a style="text-decoration:none;color:inherit" href="https://github.com/GaiZhenbiao/NanhuiChatGPT/releases/tag/{tag}">{tag}</a>'
     else:
         tag_info = "unknown \U0001F615"
     return tag_info
@@ -578,7 +578,7 @@ def versions_html():
          • 
         Gradio: {gr.__version__}
          • 
-        <a style="text-decoration:none;color:inherit" href="https://github.com/GaiZhenbiao/ChuanhuChatGPT">ChuanhuChat</a>: {repo_version}
+        <a style="text-decoration:none;color:inherit" href="https://github.com/GaiZhenbiao/NanhuiChatGPT">NanhuiChat</a>: {repo_version}
         """
 
 def version_time():
@@ -590,7 +590,7 @@ def version_time():
     return commit_time
 
 def get_html(filename):
-    path = os.path.join(shared.chuanhu_path, "assets", "html", filename)
+    path = os.path.join(shared.Nanhui_path, "assets", "html", filename)
     if os.path.exists(path):
         with open(path, encoding="utf8") as file:
             return file.read()

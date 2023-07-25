@@ -34,7 +34,7 @@ with gr.Blocks(css=customCSS, theme=small_and_beautiful_theme) as demo:
     topic = gr.State(i18n("未命名对话历史记录"))
 
     with gr.Row():
-        gr.HTML(CHUANHU_TITLE, elem_id="app_title")
+        gr.HTML(Nanhui_TITLE, elem_id="app_title")
         status_display = gr.Markdown(get_geoip(), elem_id="status_display")
     with gr.Row(elem_id="float_display"):
         user_info = gr.Markdown(value="getting user info...", elem_id="user_info")
@@ -50,7 +50,7 @@ with gr.Blocks(css=customCSS, theme=small_and_beautiful_theme) as demo:
     with gr.Row(equal_height=True):
         with gr.Column(scale=5):
             with gr.Row():
-                chatbot = gr.Chatbot(label="Chuanhu Chat", elem_id="chuanhu_chatbot", latex_delimiters=latex_delimiters_set, height=700)
+                chatbot = gr.Chatbot(label="Nanhui Chat", elem_id="Nanhui_chatbot", latex_delimiters=latex_delimiters_set, height=700)
             with gr.Row():
                 with gr.Column(min_width=225, scale=12):
                     user_input = gr.Textbox(
@@ -77,14 +77,14 @@ with gr.Blocks(css=customCSS, theme=small_and_beautiful_theme) as demo:
         with gr.Column():
             with gr.Column(min_width=50, scale=1):
                 with gr.Tab(label=i18n("模型")):
-                    keyTxt = gr.Textbox(
-                        show_label=True,
-                        placeholder=f"Your API-key...",
-                        value=hide_middle_chars(user_api_key.value),
-                        type="password",
-                        visible=not HIDE_MY_KEY,
-                        label="API-Key",
-                    )
+                    # keyTxt = gr.Textbox(
+                    #     show_label=True,
+                    #     placeholder=f"Your API-key...",
+                    #     value=hide_middle_chars(user_api_key.value),
+                    #     type="password",
+                    #     visible=not HIDE_MY_KEY,
+                    #     label="API-Key",
+                    # )
                     if multi_api_key:
                         usageTxt = gr.Markdown(i18n("多账号模式已开启，无需输入key，可直接开始对话"), elem_id="usage_display", elem_classes="insert_block")
                     else:
@@ -97,7 +97,7 @@ with gr.Blocks(css=customCSS, theme=small_and_beautiful_theme) as demo:
                     )
                     with gr.Row():
                         single_turn_checkbox = gr.Checkbox(label=i18n("单轮对话"), value=False, elem_classes="switch_checkbox")
-                        use_websearch_checkbox = gr.Checkbox(label=i18n("使用在线搜索"), value=False, elem_classes="switch_checkbox")
+                        # use_websearch_checkbox = gr.Checkbox(label=i18n("使用在线搜索"), value=False, elem_classes="switch_checkbox")
                     language_select_dropdown = gr.Dropdown(
                         label=i18n("选择回复语言（针对搜索&索引功能）"),
                         choices=REPLY_LANGUAGES,
@@ -180,7 +180,7 @@ with gr.Blocks(css=customCSS, theme=small_and_beautiful_theme) as demo:
                     use_streaming_checkbox = gr.Checkbox(
                             label=i18n("实时传输回答"), value=True, visible=ENABLE_STREAMING_OPTION, elem_classes="switch_checkbox"
                         )
-                    checkUpdateBtn = gr.Button(i18n("🔄 检查更新..."), visible=check_update)
+                    # checkUpdateBtn = gr.Button(i18n("🔄 检查更新..."), visible=check_update)
                     gr.Markdown(i18n("# ⚠️ 务必谨慎更改 ⚠️"), elem_id="advanced_warning")
                     with gr.Accordion(i18n("参数"), open=False):
                         temperature_slider = gr.Slider(
@@ -261,29 +261,29 @@ with gr.Blocks(css=customCSS, theme=small_and_beautiful_theme) as demo:
                             lines=1,
                         )
 
-                    with gr.Accordion(i18n("网络设置"), open=False):
-                        # 优先展示自定义的api_host
-                        apihostTxt = gr.Textbox(
-                            show_label=True,
-                            placeholder=i18n("在这里输入API-Host..."),
-                            label="API-Host",
-                            value=config.api_host or shared.API_HOST,
-                            lines=1,
-                            container=False,
-                        )
-                        changeAPIURLBtn = gr.Button(i18n("🔄 切换API地址"))
-                        proxyTxt = gr.Textbox(
-                            show_label=True,
-                            placeholder=i18n("在这里输入代理地址..."),
-                            label=i18n("代理地址（示例：http://127.0.0.1:10809）"),
-                            value="",
-                            lines=2,
-                            container=False,
-                        )
-                        changeProxyBtn = gr.Button(i18n("🔄 设置代理地址"))
-                        default_btn = gr.Button(i18n("🔙 恢复默认设置"))
+                    # with gr.Accordion(i18n("网络设置"), open=False):
+                    #     # 优先展示自定义的api_host
+                    #     apihostTxt = gr.Textbox(
+                    #         show_label=True,
+                    #         placeholder=i18n("在这里输入API-Host..."),
+                    #         label="API-Host",
+                    #         value=config.api_host or shared.API_HOST,
+                    #         lines=1,
+                    #         container=False,
+                    #     )
+                    #     changeAPIURLBtn = gr.Button(i18n("🔄 切换API地址"))
+                    #     proxyTxt = gr.Textbox(
+                    #         show_label=True,
+                    #         placeholder=i18n("在这里输入代理地址..."),
+                    #         label=i18n("代理地址（示例：http://127.0.0.1:10809）"),
+                    #         value="",
+                    #         lines=2,
+                    #         container=False,
+                    #     )
+                    #     changeProxyBtn = gr.Button(i18n("🔄 设置代理地址"))
+                    #     default_btn = gr.Button(i18n("🔙 恢复默认设置"))
 
-    gr.Markdown(CHUANHU_DESCRIPTION, elem_id="description")
+    gr.Markdown(Nanhui_DESCRIPTION, elem_id="description")
     gr.HTML(get_html("footer.html").format(versions=versions_html()), elem_id="footer")
 
     # https://github.com/gradio-app/gradio/pull/3296
@@ -305,7 +305,7 @@ with gr.Blocks(css=customCSS, theme=small_and_beautiful_theme) as demo:
             user_question,
             chatbot,
             use_streaming_checkbox,
-            use_websearch_checkbox,
+            #use_websearch_checkbox,
             index_files,
             language_select_dropdown,
         ],
@@ -373,7 +373,7 @@ with gr.Blocks(css=customCSS, theme=small_and_beautiful_theme) as demo:
             current_model,
             chatbot,
             use_streaming_checkbox,
-            use_websearch_checkbox,
+            #use_websearch_checkbox,
             index_files,
             language_select_dropdown,
         ],
@@ -412,8 +412,8 @@ with gr.Blocks(css=customCSS, theme=small_and_beautiful_theme) as demo:
     two_column.change(update_doc_config, [two_column], None)
 
     # LLM Models
-    keyTxt.change(set_key, [current_model, keyTxt], [user_api_key, status_display], api_name="set_key").then(**get_usage_args)
-    keyTxt.submit(**get_usage_args)
+    #keyTxt.change(set_key, [current_model, keyTxt], [user_api_key, status_display], api_name="set_key").then(**get_usage_args)
+    #keyTxt.submit(**get_usage_args)
     single_turn_checkbox.change(set_single_turn, [current_model, single_turn_checkbox], None)
     model_select_dropdown.change(get_model, [model_select_dropdown, lora_select_dropdown, user_api_key, temperature_slider, top_p_slider, systemPromptTxt, user_name], [current_model, status_display, chatbot, lora_select_dropdown], show_progress=True, api_name="get_model")
     model_select_dropdown.change(toggle_like_btn_visibility, [model_select_dropdown], [like_dislike_area], show_progress=False)
@@ -466,30 +466,30 @@ with gr.Blocks(css=customCSS, theme=small_and_beautiful_theme) as demo:
     logit_bias_txt.change(set_logit_bias, [current_model, logit_bias_txt], None)
     user_identifier_txt.change(set_user_identifier, [current_model, user_identifier_txt], None)
 
-    default_btn.click(
-        reset_default, [], [apihostTxt, proxyTxt, status_display], show_progress=True
-    )
-    changeAPIURLBtn.click(
-        change_api_host,
-        [apihostTxt],
-        [status_display],
-        show_progress=True,
-    )
-    changeProxyBtn.click(
-        change_proxy,
-        [proxyTxt],
-        [status_display],
-        show_progress=True,
-    )
-    checkUpdateBtn.click(fn=None, _js='()=>{manualCheckUpdate();}')
+    # default_btn.click(
+    #     reset_default, [], [apihostTxt, proxyTxt, status_display], show_progress=True
+    # )
+    # changeAPIURLBtn.click(
+    #     change_api_host,
+    #     [apihostTxt],
+    #     [status_display],
+    #     show_progress=True,
+    # )
+    # changeProxyBtn.click(
+    #     change_proxy,
+    #     [proxyTxt],
+    #     [status_display],
+    #     show_progress=True,
+    # )
+    # checkUpdateBtn.click(fn=None, _js='()=>{manualCheckUpdate();}')
 
 logging.info(
     colorama.Back.GREEN
-    + "\n川虎的温馨提示：访问 http://localhost:7860 查看界面"
+    + "\n南慧的温馨提示：访问 http://localhost:7860 查看界面"
     + colorama.Style.RESET_ALL
 )
 # 默认开启本地服务器，默认可以直接从IP访问，默认不创建公开分享链接
-demo.title = i18n("川虎Chat 🚀")
+demo.title = i18n("南慧ChatGPT")
 
 if __name__ == "__main__":
     reload_javascript()

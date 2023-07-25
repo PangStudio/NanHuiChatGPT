@@ -26,7 +26,7 @@ __all__ = [
     "check_update",
     "latex_delimiters_set",
     "hide_history_when_not_logged_in",
-    "default_chuanhu_assistant_model"
+    "default_Nanhui_assistant_model"
 ]
 
 # 添加一个统一的config文件，避免文件过多造成的疑惑（优先级最低）
@@ -104,7 +104,7 @@ api_host = os.environ.get("OPENAI_API_BASE", config.get("openai_api_base", None)
 if api_host is not None:
     shared.state.set_api_host(api_host)
 
-default_chuanhu_assistant_model = config.get("default_chuanhu_assistant_model", "gpt-3.5-turbo")
+default_Nanhui_assistant_model = config.get("default_Nanhui_assistant_model", "gpt-3.5-turbo")
 for x in ["GOOGLE_CSE_ID", "GOOGLE_API_KEY", "WOLFRAM_ALPHA_APPID", "SERPAPI_API_KEY"]:
     if config.get(x, None) is not None:
         os.environ[x] = config[x]

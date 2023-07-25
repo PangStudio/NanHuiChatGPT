@@ -42,11 +42,12 @@ CONCURRENT_COUNT = 100 # 允许同时使用的用户数量
 SIM_K = 5
 INDEX_QUERY_TEMPRATURE = 1.0
 
-CHUANHU_TITLE = i18n("川虎Chat 🚀")
+Nanhui_TITLE = i18n("南慧Chat")
 
-CHUANHU_DESCRIPTION = i18n("由Bilibili [土川虎虎虎](https://space.bilibili.com/29125536)、[明昭MZhao](https://space.bilibili.com/24807452) 和 [Keldos](https://github.com/Keldos-Li) 开发<br />访问川虎Chat的 [GitHub项目](https://github.com/GaiZhenbiao/ChuanhuChatGPT) 下载最新版脚本")
+Nanhui_DESCRIPTION = i18n("南慧ChatGPT")
 
 
+#TODO list
 ONLINE_MODELS = [
     "gpt-3.5-turbo",
     "gpt-3.5-turbo-16k",
@@ -58,15 +59,15 @@ ONLINE_MODELS = [
     "gpt-4-32k",
     "gpt-4-32k-0314",
     "gpt-4-32k-0613",
-    "川虎助理",
-    "川虎助理 Pro",
-    "xmchat",
-    "yuanai-1.0-base_10B",
-    "yuanai-1.0-translate",
-    "yuanai-1.0-dialog",
-    "yuanai-1.0-rhythm_poems",
-    "minimax-abab4-chat",
-    "minimax-abab5-chat",
+    # "南慧助理",
+    # "南慧助理 Pro",
+    # "xmchat",
+    # "yuanai-1.0-base_10B",
+    # "yuanai-1.0-translate",
+    # "yuanai-1.0-dialog",
+    # "yuanai-1.0-rhythm_poems",
+    # "minimax-abab4-chat",
+    # "minimax-abab5-chat",
 ]
 
 LOCAL_MODELS = [
@@ -82,11 +83,11 @@ LOCAL_MODELS = [
     "llama-30b-hf",
     "llama-65b-hf",
 ]
-
+#TODO
 if os.environ.get('HIDE_LOCAL_MODELS', 'false') == 'true':
     MODELS = ONLINE_MODELS
 else:
-    MODELS = ONLINE_MODELS + LOCAL_MODELS
+    MODELS = ONLINE_MODELS #+ LOCAL_MODELS
 
 DEFAULT_MODEL = 0
 
@@ -113,7 +114,7 @@ MODEL_TOKEN_LIMIT = {
 
 TOKEN_OFFSET = 1000 # 模型的token上限减去这个值，得到软上限。到达软上限之后，自动尝试减少token占用。
 DEFAULT_TOKEN_LIMIT = 3000 # 默认的token上限
-REDUCE_TOKEN_FACTOR = 0.5 # 与模型token上限想乘，得到目标token数。减少token占用时，将token占用减少到目标token数以下。
+REDUCE_TOKEN_FACTOR = 0.5 # 与模型token上限相乘，得到目标token数。减少token占用时，将token占用减少到目标token数以下。
 
 REPLY_LANGUAGES = [
     "简体中文",

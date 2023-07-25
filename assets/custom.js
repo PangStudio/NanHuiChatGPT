@@ -75,8 +75,8 @@ function gradioLoaded(mutations) {
             user_input_tb = document.getElementById('user_input_tb');
             userInfoDiv = document.getElementById("user_info");
             appTitleDiv = document.getElementById("app_title");
-            chatbot = document.querySelector('#chuanhu_chatbot');
-            chatbotWrap = document.querySelector('#chuanhu_chatbot > .wrapper > .wrap');
+            chatbot = document.querySelector('#Nanhui_chatbot');
+            chatbotWrap = document.querySelector('#Nanhui_chatbot > .wrapper > .wrap');
             apSwitch = document.querySelector('.apSwitch input[type="checkbox"]');
             updateToast = document.querySelector("#toast-update");
             sendBtn = document.getElementById("submit_btn");
@@ -370,13 +370,13 @@ function setSliderRange() {
     });
 }
 
-function addChuanhuButton(botElement) {
+function addNanhuiButton(botElement) {
     var rawMessage = null;
     var mdMessage = null;
     rawMessage = botElement.querySelector('.raw-message');
     mdMessage = botElement.querySelector('.md-message');
     if (!rawMessage) {
-        var buttons = botElement.querySelectorAll('button.chuanhu-btn');
+        var buttons = botElement.querySelectorAll('button.Nanhui-btn');
         for (var i = 0; i < buttons.length; i++) {
             buttons[i].parentNode.removeChild(buttons[i]);
         }
@@ -391,7 +391,7 @@ function addChuanhuButton(botElement) {
 
     // Copy bot button
     var copyButton = document.createElement('button');
-    copyButton.classList.add('chuanhu-btn');
+    copyButton.classList.add('Nanhui-btn');
     copyButton.classList.add('copy-bot-btn');
     copyButton.setAttribute('aria-label', 'Copy');
     copyButton.innerHTML = copyIcon;
@@ -428,7 +428,7 @@ function addChuanhuButton(botElement) {
 
     // Toggle button
     var toggleButton = document.createElement('button');
-    toggleButton.classList.add('chuanhu-btn');
+    toggleButton.classList.add('Nanhui-btn');
     toggleButton.classList.add('toggle-md-btn');
     toggleButton.setAttribute('aria-label', 'Toggle');
     var renderMarkdown = mdMessage.classList.contains('hideM');
@@ -470,14 +470,14 @@ var mObserver = new MutationObserver(function (mutationsList) {
                 if (node.nodeType === 1 && node.classList.contains('message')) {
                     saveHistoryHtml();
                     disableSendBtn();
-                    document.querySelectorAll('#chuanhu_chatbot .message-wrap .message.bot').forEach(addChuanhuButton);
+                    document.querySelectorAll('#Nanhui_chatbot .message-wrap .message.bot').forEach(addNanhuiButton);
                 }
             }
             for (var node of mmutation.removedNodes) {
                 if (node.nodeType === 1 && node.classList.contains('message')) {
                     saveHistoryHtml();
                     disableSendBtn();
-                    document.querySelectorAll('#chuanhu_chatbot .message-wrap .message.bot').forEach(addChuanhuButton);
+                    document.querySelectorAll('#Nanhui_chatbot .message-wrap .message.bot').forEach(addNanhuiButton);
                 }
             }
         } else if (mmutation.type === 'attributes') {
@@ -486,7 +486,7 @@ var mObserver = new MutationObserver(function (mutationsList) {
             clearTimeout(timeoutId);
             timeoutId = setTimeout(() => {
                 isThrottled = false;
-                document.querySelectorAll('#chuanhu_chatbot .message-wrap .message.bot').forEach(addChuanhuButton);
+                document.querySelectorAll('#Nanhui_chatbot .message-wrap .message.bot').forEach(addNanhuiButton);
                 saveHistoryHtml();
                 disableSendBtn();
             }, 1500);
@@ -496,13 +496,13 @@ var mObserver = new MutationObserver(function (mutationsList) {
 // mObserver.observe(targetNode, { attributes: true, childList: true, subtree: true, characterData: true});
 
 var submitObserver = new MutationObserver(function (mutationsList) {
-    document.querySelectorAll('#chuanhu_chatbot .message-wrap .message.bot').forEach(addChuanhuButton);
+    document.querySelectorAll('#Nanhui_chatbot .message-wrap .message.bot').forEach(addNanhuiButton);
     saveHistoryHtml();
 });
 
 var loadhistorytime = 0; // for debugging
 function saveHistoryHtml() {
-    var historyHtml = document.querySelector('#chuanhu_chatbot>.wrapper>.wrap');
+    var historyHtml = document.querySelector('#Nanhui_chatbot>.wrapper>.wrap');
     if (!historyHtml) return;   // no history, do nothing
     localStorage.setItem('chatHistory', historyHtml.innerHTML);
     // console.log("History Saved")
@@ -522,7 +522,7 @@ function loadHistoryHtml() {
     if (!historyLoaded) {
         var tempDiv = document.createElement('div');
         tempDiv.innerHTML = historyHtml;
-        var buttons = tempDiv.querySelectorAll('button.chuanhu-btn');
+        var buttons = tempDiv.querySelectorAll('button.Nanhui-btn');
         var gradioCopyButtons = tempDiv.querySelectorAll('button.copy_code_button');
         for (var i = 0; i < buttons.length; i++) {
             buttons[i].parentNode.removeChild(buttons[i]);
@@ -558,7 +558,7 @@ function clearHistoryHtml() {
 var showingUpdateInfo = false;
 async function getLatestRelease() {
     try {
-        const response = await fetch('https://api.github.com/repos/gaizhenbiao/chuanhuchatgpt/releases/latest');
+        const response = await fetch('https://api.github.com/repos/gaizhenbiao/Nanhuichatgpt/releases/latest');
         if (!response.ok) {
             console.log(`Error: ${response.status} - ${response.statusText}`);
             updateInfoGotten = true;
@@ -605,7 +605,7 @@ async function updateLatestVersion() {
     }
 }
 function getUpdate() {
-    window.open('https://github.com/gaizhenbiao/chuanhuchatgpt/releases/latest', '_blank');
+    window.open('https://github.com/gaizhenbiao/Nanhuichatgpt/releases/latest', '_blank');
     closeUpdateToast();
 }
 function cancelUpdate() {
@@ -676,23 +676,17 @@ function makeML(str) {
     l = l.substring(l.indexOf("/*") + 3, l.lastIndexOf("*/"))
     return l
 }
-let ChuanhuInfo = function () {
-    /* 
-   ________                      __             ________          __ 
-  / ____/ /_  __  ______ _____  / /_  __  __   / ____/ /_  ____ _/ /_
- / /   / __ \/ / / / __ `/ __ \/ __ \/ / / /  / /   / __ \/ __ `/ __/
-/ /___/ / / / /_/ / /_/ / / / / / / / /_/ /  / /___/ / / / /_/ / /_  
-\____/_/ /_/\__,_/\__,_/_/ /_/_/ /_/\__,_/   \____/_/ /_/\__,_/\__/  
+let NanhuiInfo = function () {
+    /*  
                                                                      
-   川虎Chat (Chuanhu Chat) - GUI for ChatGPT API and many LLMs
+     南慧Chat (Nanhui Chat) - GUI for ChatGPT API
  */
 }
 let description = `
-© 2023 Chuanhu, MZhao, Keldos
-GitHub repository: [https://github.com/GaiZhenbiao/ChuanhuChatGPT]\n
+© 2023 NanHui,  
 Enjoy our project!\n
 `
-console.log(`%c${makeML(ChuanhuInfo)}`,styleTitle1)
+console.log(`%c${makeML(NanhuiInfo)}`,styleTitle1)
 console.log(`%c${description}`, styleDesc1)
 
 // button svg code
